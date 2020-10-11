@@ -81,3 +81,8 @@ go get -u github.com/koangel/grapeNet/...
 ### 其他模块
 
 暂无文档 有待补全
+
+### 其他同作者开源项目
+
+* 时间调度系统: https://github.com/koangel/grapeTimer
+* SQL注入主动监测系统：https://github.com/koangel/grapeSQLI
