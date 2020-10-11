@@ -214,3 +214,18 @@ avgVar.String() // 输出文本的平均数据
 avgVar.Value() // 取数据
 ```
 
+## 快速HASH函数
+
+包含以下bytes实现：
+
+* sha1
+* sha256
+* sha512
+* crc32 Ieee
+* crc64 ISO
+* md5
+* hmac
+
+只需要调用 `Utils.SHA1([]byte("1234"))` 即可直接快速生成 SHA1字符串。
+
+Bytes结尾的函数，仅仅生成原始bytes hash，如果需要字符串，请使用无bytes结尾函数。
