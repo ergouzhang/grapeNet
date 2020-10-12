@@ -13,42 +13,50 @@ import (
 
 func HMac_SHA1Bytes(data, key []byte) []byte {
 	sha1hmac := hmac.New(sha1.New, key)
-	return sha1hmac.Sum(data)
+	sha1hmac.Write(data)
+	return sha1hmac.Sum(nil)
 }
 
 func HMac_MD5Bytes(data, key []byte) []byte {
 	vhmac := hmac.New(md5.New, key)
-	return vhmac.Sum(data)
+	vhmac.Write(data)
+	return vhmac.Sum(nil)
 }
 
 func HMac_SHA256Bytes(data, key []byte) []byte {
 	vhmac := hmac.New(sha256.New, key)
-	return vhmac.Sum(data)
+	vhmac.Write(data)
+	return vhmac.Sum(nil)
 }
 
 func HMac_SHA512Bytes(data, key []byte) []byte {
 	vhmac := hmac.New(sha512.New, key)
-	return vhmac.Sum(data)
+	vhmac.Write(data)
+	return vhmac.Sum(nil)
 }
 
 func SHA1Bytes(data []byte) []byte {
 	sha1hash := sha1.New()
-	return sha1hash.Sum(data)
+	sha1hash.Write(data)
+	return sha1hash.Sum(nil)
 }
 
 func MD5Bytes(data []byte) []byte {
 	md5hash := md5.New()
-	return md5hash.Sum(data)
+	md5hash.Write(data)
+	return md5hash.Sum(nil)
 }
 
 func SHA256Bytes(data []byte) []byte {
 	sha256Hash := sha256.New()
-	return sha256Hash.Sum(data)
+	sha256Hash.Write(data)
+	return sha256Hash.Sum(nil)
 }
 
 func SHA512Bytes(data []byte) []byte {
 	sha512Hash := sha512.New()
-	return sha512Hash.Sum(data)
+	sha512Hash.Write(data)
+	return sha512Hash.Sum(nil)
 }
 
 func Crc32IEEE(data []byte) uint32 {
