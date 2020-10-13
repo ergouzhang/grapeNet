@@ -95,3 +95,43 @@ func (sc *SList) Remove(fn func(i interface{}) bool) {
 		}
 	}
 }
+
+func (sc *SList) Sort(fn func(a, b interface{}) bool) {
+	sc.locker.Lock()
+	defer sc.locker.Unlock()
+
+	newList := list.New()
+	//用老链表进行遍历  与新链表进行表
+	for e := sc.slist.Front(); e != nil; e = e.Next() {
+		node := newList.Front()
+		for nil != node {
+			cmpVal := fn(node.Value, e.Value)
+			if cmpVal {
+				newList.InsertBefore(e.Value, node)
+				break
+			}
+
+			node = node.Next()
+		}
+
+		//能走到这步 则表明v只能放入链表最后
+		if node == nil {
+			newList.PushBack(e.Value)
+		}
+	}
+
+	sc.slist = newList // 新队列
+}
+
+func (sc *SList) RemoveRanges(fn func(i interface{}) bool) {
+	sc.locker.Lock()
+	defer sc.locker.Unlock()
+
+	for e := sc.slist.Front(); e != nil; {
+		next := e.Next()
+		if fn(e.Value) {
+			sc.slist.Remove(e)
+		}
+		e = next
+	}
+}
