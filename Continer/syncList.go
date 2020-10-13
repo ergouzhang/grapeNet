@@ -49,21 +49,25 @@ func (sc *SList) Clear() {
 	sc.slist = list.New() //
 }
 
-func (sc *SList) Range(fn func(i interface{})) {
+func (sc *SList) Range(fn func(i interface{}) bool) {
 	sc.locker.RLock()
 	defer sc.locker.RUnlock()
 
 	for e := sc.slist.Front(); e != nil; e = e.Next() {
-		fn(e.Value)
+		if fn(e.Value) == false {
+			break
+		}
 	}
 }
 
-func (sc *SList) ReverseRange(fn func(i interface{})) {
+func (sc *SList) ReverseRange(fn func(i interface{}) bool) {
 	sc.locker.RLock()
 	defer sc.locker.RUnlock()
 
 	for e := sc.slist.Back(); e != nil; e = e.Prev() {
-		fn(e.Value)
+		if fn(e.Value) == false {
+			break
+		}
 	}
 }
 
