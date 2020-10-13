@@ -21,6 +21,10 @@ func New() *SList {
 	}
 }
 
+func (sc *SList) Len() int {
+	return sc.slist.Len()
+}
+
 func (sc *SList) Push(item interface{}) {
 	sc.locker.Lock()
 	defer sc.locker.Unlock()
