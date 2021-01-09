@@ -30,6 +30,23 @@
     })
 ```
 
+## 周期性容器(TimeLimit)
+
+主要用于需要周期性统计限制，例如超过阈值，数据会在一个时间内删除数据，重新计算。
+线程安全
+
+```
+    // loopTime = 清理的周期
+    // clearTick = 运行检查清理的周期，建议5秒
+    // limit = 限制数据的最大数值，当计算至这个数值后，不会增加
+    group:=NewTimeGroup(10*time.Minute,5*time.Second,100000)
+    
+    // 当这里根据key计算数量超过limit限制时，会返回true，否则为false
+    if group.AddCount("abcd") {
+        fmt.Println("limit value error...")
+    }
+```
+
 ## 游戏用背包容器 ItemBox
 
 用于游戏内使用的背包，技能，穿戴装备等需要特殊容器的场景，自带线程安全！
