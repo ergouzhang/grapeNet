@@ -1,4 +1,14 @@
- [![Go Report Card](https://goreportcard.com/badge/github.com/koangel/grapeNet)](https://goreportcard.com/report/github.com/koangel/grapeNet)  [![Build Status](https://secure.travis-ci.org/koangel/grapeNet.png)](http://travis-ci.org/koangel/grapeNet)
+```
+   ______                                ____  _____        _      ______           
+ .' ___  |                              |_   \|_   _|      / |_  .' ___  |          
+/ .'   \_| _ .--.  ,--.  _ .--.   .---.   |   \ | |  .---.`| |-'/ .'   \_|   .--.   
+| |   ____[ `/'`\]`'_\ :[ '/'`\ \/ /__\\  | |\ \| | / /__\\| |  | |   ____ / .'`\ \ 
+\ `.___]  || |    // | |,| \__/ || \__., _| |_\   |_| \__.,| |, \ `.___]  || \__. | 
+ `._____.'[___]   \'-;__/| ;.__/  '.__.'|_____|\____|'.__.'\__/  `._____.'  '.__.'  
+                        [__|                                                        
+``` 
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/koangel/grapeNet)](https://goreportcard.com/report/github.com/koangel/grapeNet)  [![Build Status](https://secure.travis-ci.org/koangel/grapeNet.png)](http://travis-ci.org/koangel/grapeNet)
 
 ---
 
